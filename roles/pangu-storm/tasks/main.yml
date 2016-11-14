@@ -1,9 +1,9 @@
 ---
-- name: copy storm-rpm
-  copy: src=x86_64/apache-storm-0.9.4-1.x86_64.rpm dest=/opt
+- name: copy storm
+  copy: src=apache-storm-0.9.5.tar.gz dest=/opt
 
 - name: install storm
-  yum: name=/opt/apache-storm-0.9.4-1.x86_64.rpm state=present
+  shell: cd /opt ; tar -zxvf apache-storm-0.9.5.tar.gz
 
 - file: path=/opt/apache-storm-0.9.4/data state=directory mode="u=rwx,g=rx,o=rx"
 
