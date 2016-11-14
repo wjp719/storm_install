@@ -14,13 +14,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
- storm.zookeeper.servers:
+storm.zookeeper.servers:
 {% for node in groups['zookeeper'] %}
-    - "{{ hostvars[node].ansible_ssh_host }}"
+  - "{{ hostvars[node].ansible_ssh_host }}"
 {% endfor %}
 
 {% for node in groups['nimbus'] %}
- nimbus.host: "{{ hostvars[node].ansible_ssh_host }}"
+nimbus.host: "{{ hostvars[node].ansible_ssh_host }}"
 {% endfor %}
 storm.zookeeper.port: 2181
 storm.local.dir: "/opt/apache-storm-0.9.5/data"
