@@ -1,9 +1,12 @@
 [storm]
-storm1 ansible_ssh_host=10.10.10.88 storm_nimbus_enabled=true
-storm2 ansible_ssh_host=10.10.10.91 storm_nimbus_enabled=false
+storm0 ansible_ssh_host=10.10.10.87
+storm1 ansible_ssh_host=10.10.10.88
+storm2 ansible_ssh_host=10.10.10.91
 
 [zookeeper]
-storm1  zookeeper_myid=1
+storm0  zookeeper_myid=1
+storm1  zookeeper_myid=2
+storm2  zookeeper_myid=3
 
 [nimbus]
 storm1
