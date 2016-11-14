@@ -1,0 +1,19 @@
+---
+#- name: install zookeeper
+#  hosts: zookeeper
+#  sudo: yes
+#  roles:
+#    - pangu-zookeeper
+
+
+#- name: install storm
+#  hosts: storm
+#  sudo: yes
+#  roles:
+#   - pangu-storm
+
+- name: install jdk
+  hosts: jdk
+  sudo: yes
+  roles:
+    - pangu-dependency

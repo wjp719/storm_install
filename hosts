@@ -1,0 +1,15 @@
+[zookeeper]
+host-10-0-0-15 ansible_ssh_host=10.10.10.15 zookeeper_myid=1
+host-10-0-0-16 ansible_ssh_host=10.10.10.16 zookeeper_myid=2
+host-10-0-0-17 ansible_ssh_host=10.10.10.17 zookeeper_myid=3
+
+[storm]
+host-10-0-0-15 storm_nimbus_enabled=true
+host-10-0-0-16 storm_nimbus_enabled=false
+host-10-0-0-17 storm_nimbus_enabled=false
+
+[redis]
+host-10-0-0-15
+
+[jdk]
+storm2 ansible_ssh_host=10.10.10.91

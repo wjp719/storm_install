@@ -1,0 +1,22 @@
+---
+- name: start zookeeper
+  hosts: pangu-zookeeper
+  sudo: yes
+  tasks:
+    - supervisorctl: name=zookeeper state=started
+
+- name: start redis
+  hosts: pangu-redis
+  sudo: yes
+  tasks:
+    - service: name=redis state=started enabled=yes
+
+- name: start storm
+  hosts: pangu-storm
+  sudo: yes
+  tasks:  
+    - supervisorctl: name=nimbus state=started
+      when: storm_nimbus_enabled
+    - supervisorctl: name=supervisor state=started
+    - supervisorctl: name=ui state=started
+      when: storm_nimbus_enabled

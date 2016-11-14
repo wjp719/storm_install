@@ -1,0 +1,4 @@
+---
+ - name: Enable 8080
+   firewalld: port=8080/tcp permanent=true state=enabled
+   notify: Restart firewalld
