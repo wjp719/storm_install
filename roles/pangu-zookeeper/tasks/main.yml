@@ -1,12 +1,12 @@
 ---
 - name: copy zookeeper-rpm
-  copy: src=x86_64/zookeeper-3.4.6-1.x86_64.rpm dest=/opt
+  copy: src=zookeeper-3.4.6.tar.gz dest=/opt
 
 - name: install zookeeper
-  yum: name=/opt/zookeeper-3.4.6-1.x86_64.rpm state=present
+  - command: cd /opt & tar -zxvf zookeeper-3.4.6.tar.gz & cd zookeeper-3.4.6
 
 - template: >
-    src=zoo.cfg.j2 
+    src=zoo.cfg.j2
     dest=/opt/zookeeper-3.4.6/conf/zoo.cfg
     mode=666
 
