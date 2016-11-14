@@ -3,7 +3,7 @@
   copy: src=zookeeper-3.4.6.tar.gz dest=/opt
 
 - name: install zookeeper
-  - command: cd /opt ; tar -zxvf /opt/zookeeper-3.4.6.tar.gz
+  command: cd /opt ; tar -zxvf /opt/zookeeper-3.4.6.tar.gz
 
 - template: >
     src=zoo.cfg.j2
