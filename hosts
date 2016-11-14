@@ -9,4 +9,4 @@ storm1  zookeeper_myid=2
 storm2  zookeeper_myid=3
 
 [nimbus]
-storm1
+storm0
