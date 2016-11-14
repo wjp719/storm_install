@@ -7,12 +7,8 @@
 
 - file: path=/opt/apache-storm-0.9.4/data state=directory mode="u=rwx,g=rx,o=rx"
 
-- name: add hostname
-  lineinfile: dest=/etc/hosts
-              line="{{ hostvars[item]['ansible_ssh_host'] }} {{item}}"
-  with_items: groups['storm']
 
 - template: >
     src=storm.yaml.j2
-    dest=/opt/apache-storm-0.9.4/conf/storm.yaml
+    dest=/opt/apache-storm-0.9.5/conf/storm.yaml
     mode=666
