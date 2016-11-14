@@ -5,6 +5,11 @@
 - name: install zookeeper
   shell: cd /opt ; tar -zxvf zookeeper-3.4.6.tar.gz
 
+- name: add hostname
+  lineinfile: dest=/etc/hosts
+              line="{{ hostvars[item]['ansible_ssh_host'] }} {{item}}"
+  with_items: groups['storm']
+
 - template: >
     src=zoo.cfg.j2
     dest=/opt/zookeeper-3.4.6/conf/zoo.cfg
