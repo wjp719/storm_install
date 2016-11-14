@@ -17,3 +17,4 @@
   sudo: yes
   roles:
     - pangu-dependency
+    - pangu-zookeeper
