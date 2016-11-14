@@ -19,9 +19,9 @@
     - "{{ hostvars[node].ansible_ssh_host }}"
 {% endfor %}
 
-{% for node in groups['redis'] %}
+{% for node in groups['nimbus'] %}
  nimbus.host: "{{ hostvars[node].ansible_ssh_host }}"
 {% endfor %}
- storm.zookeeper.port: 2181
- storm.local.dir: "/opt/apache-storm-0.9.4/data"
- ui.port: 8080
+storm.zookeeper.port: 2181
+storm.local.dir: "/opt/apache-storm-0.9.5/data"
+ui.port: 8080
