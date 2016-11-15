@@ -7,10 +7,17 @@
 
 - file: path=/opt/apache-storm-0.9.4/data state=directory mode="u=rwx,g=rx,o=rx"
 
+
+- name: tes
+  shell: echo "hey {{ item }}"
+  with_items: groups.storm
+
 - name: add hostname
   lineinfile: dest=/etc/hosts
               line="{{ hostvars[item].ansible_ssh_host }} {{item}}"
   with_items: groups.storm
+
+
 
 - template: >
     src=storm.yaml.j2
