@@ -9,7 +9,7 @@
 
 - name: add hostname
   lineinfile: dest=/etc/hosts
-              line="{{ item.ansible_ssh_host }} {{item}}"
+              line="{{ hostvars[item].ansible_ssh_host }} {{item}}"
   with_items: groups['storm']
 
 - template: >
