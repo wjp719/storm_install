@@ -5,12 +5,13 @@
 - name: install zookeeper
   shell: cd /opt ; tar -zxvf zookeeper-3.4.6.tar.gz
 
-
-
 - template: >
     src=zoo.cfg.j2
     dest=/opt/zookeeper-3.4.6/conf/zoo.cfg
     mode=666
+
+- name: create fold
+  file: path=/opt/zookeeper-3.4.6/zkdata state=directory mode=0755
 
 - name: configure Zookeeper myid
   template: src=myid.j2 dest=/opt/zookeeper-3.4.6/zkdata/myid
