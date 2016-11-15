@@ -10,7 +10,8 @@
 - name: add hosts
   lineinfile: dest=/etc/hosts
               line="{{ hostvars[item].ansible_ssh_host }} {{item}}"
-  with_items: {{ groups.storm }}
+  with_items:
+    - {{ groups.storm }}
 
 
 
