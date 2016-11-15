@@ -1,5 +1,6 @@
 ---
 - name: install zookeeper
+  remote_user: ubuntu
   hosts: zookeeper
   sudo: yes
   roles:
@@ -7,6 +8,7 @@
 
 
 - name: install storm
+  remote_user: ubuntu
   hosts: storm
   sudo: yes
   roles:
