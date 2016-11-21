@@ -5,7 +5,7 @@
 - name: install storm
   shell: cd /opt ; tar -zxvf apache-storm-0.9.5.tar.gz
 
-- file: path=/opt/apache-storm-0.9.4/data state=directory mode="u=rwx,g=rx,o=rx"
+- file: path=/opt/apache-storm-0.9.5/data state=directory mode="u=rwx,g=rx,o=rx"
 
 - name: add hosts
   lineinfile: dest=/etc/hosts
